@@ -1,0 +1,69 @@
+/* Sprite Icons */
+.icon {
+  background-image: url(/img/icons.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.icon-instagram { background-position: -5px -24px; }
+.icon-linkedin { background-position: -33px -5px; }
+.icon-youtube {
+  background-position: -31px -31px;
+  height: 12px;
+}
+.icon-arrow {
+  width: 18px;
+  height: 9px;
+  background-position: -5px -5px;
+}
+
+/* Full Screen Line */
+.villa-info::before {
+  content: '';
+  position: absolute;
+  border: 1px solid #F2F2F2;
+  height: 100vh;
+  top: -6rem;
+  left: 4rem;
+  z-index: -1;
+}
+
+/* Next & Prev hover Animation */
+.switch-btn:not([disabled]) > span::before {
+  content: '';
+  width: 100%;
+  transform: translateX(-200%);
+  transition: 400ms ease-in-out;
+  opacity: 0;
+  border-bottom: 1px solid #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.switch-btn.prev:not([disabled]) > span::before {
+  transform: translateX(200%);
+  left: auto;
+  right: 0;
+}
+.switch-btn:hover > span::before,
+.switch-btn:focus > span::before {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
+/* Images Slider Hover Animation */
+.img-slider:hover .icon-arrow {
+  transform: translateX(52px);
+}
+.img-slider:hover .slide {
+  transform: scale(1.2);
+}
+.img-slider {
+  height: 729px;
+  transition: all .7s ease-in-out;
+}
+.img-slider:hover {
+  margin-top: -6rem;
+  height: calc(729px + 6rem);
+}
